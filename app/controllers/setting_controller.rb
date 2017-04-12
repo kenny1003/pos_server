@@ -79,7 +79,7 @@ class SettingController < ApplicationController
   end
 
   def menu_change1
-    @menu = Menu.find(params[:menuid])
+    @menu = Menu.find(params[:menu_id])
 
   end
 
@@ -90,12 +90,12 @@ class SettingController < ApplicationController
     @menu.price = params[:menu_price]
     @menu.save
 
-    redirect_to "/setting/showmenu"
+    redirect_to "/setting/menusetting"
 
   end
 
   def menu_destroy
-    @menu = Menu.find(params[:menuid])
+    @menu = Menu.find(params[:menu_id])
     @menu.destroy
     redirect_to :back
   end
